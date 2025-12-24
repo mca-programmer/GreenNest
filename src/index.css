@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-secondary: #d72050;
+}
+body {
+  background-color: #f6f6f6;
+}
+/* CustomerReview.css */
+.marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee {
+  display: flex;
+  gap: 1.5rem;
+  animation: marquee 20s linear infinite;
+}
+
+/* Pause animation on hover */
+.marquee-wrapper:hover .marquee {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Card minimum width for responsive */
+.marquee-card {
+  min-width: 250px;
+}
+
+/* PlantsExperts.css */
+.experts-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.experts-marquee {
+  display: flex;
+  gap: 1.5rem;
+  animation: experts-marquee 25s linear infinite reverse; /* reverse for left-to-right */
+}
+
+.experts-marquee-wrapper:hover .experts-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes experts-marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.experts-card {
+  min-width: 220px;
+  flex-shrink: 0;
+}
+/* PlantsCareTips.css */
+.tips-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.tips-marquee {
+  display: flex;
+  gap: 1.5rem;
+  animation: tips-marquee 20s linear infinite;
+}
+
+.tips-marquee-wrapper:hover .tips-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes tips-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tips-card {
+  min-width: 250px;
+}

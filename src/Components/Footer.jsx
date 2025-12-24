@@ -1,71 +1,117 @@
 import React from "react";
-import { FaInstagram, FaPinterest } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import {
+  FaInstagram,
+  FaPinterest,
+  FaFacebookF,
+  FaYoutube,
+} from "react-icons/fa";
 import logoImg from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer footer-horizontal footer-center bg-linear-to-r from-lime-300 via-green-400 to-emerald-600 text-base-content rounded p-10">
-        <div className="flex">
-          <img
-            className="w-15 h-15 mr-2 object-cover rounded-full"
-            src={logoImg}
-            alt=""
-          />
-          <nav className="grid grid-flow-col gap-4">
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Private Policy</a>
-          </nav>
-        </div>
-        <nav>
-          <div className="grid grid-flow-col gap-4">
-            <FaInstagram size={25} />
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-              </svg>
-            </a>
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-              </svg>
-            </a>
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-              </svg>
-            </a>
-            <FaPinterest size={25} />
+    <footer className="bg-gradient-to-r from-lime-400 via-green-500 to-emerald-600 text-white mt-20">
+      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Brand */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <img
+              src={logoImg}
+              alt="GreenNest"
+              className="w-12 h-12 rounded-full bg-white p-1"
+            />
+            <h2 className="text-2xl font-bold">GreenNest</h2>
           </div>
-        </nav>
-        <aside>
-          <p>
-            Copyright © {new Date().getFullYear()} GreenNest. All rights
-            reserved
+          <p className="text-sm text-white/90">
+            Grow healthier plants with expert tips, community support, and
+            sustainable gardening ideas.
           </p>
-        </aside>
-      </footer>
-    </div>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link to="/about" className="hover:underline">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/care-tips" className="hover:underline">
+                Care Tips
+              </Link>
+            </li>
+            <li>
+              <Link to="/community" className="hover:underline">
+                Community
+              </Link>
+            </li>
+            <li>
+              <Link to="/faq" className="hover:underline">
+                FAQ
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Social */}
+        {/* Social */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
+
+          <div className="flex gap-4 mb-4">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="p-3 bg-white/20 rounded-full hover:bg-white hover:text-pink-600 transition transform hover:scale-110"
+            >
+              <FaInstagram />
+            </a>
+
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="p-3 bg-white/20 rounded-full hover:bg-white hover:text-blue-600 transition transform hover:scale-110"
+            >
+              <FaFacebookF />
+            </a>
+
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="p-3 bg-white/20 rounded-full hover:bg-white hover:text-red-600 transition transform hover:scale-110"
+            >
+              <FaYoutube />
+            </a>
+
+            <a
+              href="https://www.pinterest.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pinterest"
+              className="p-3 bg-white/20 rounded-full hover:bg-white hover:text-red-500 transition transform hover:scale-110"
+            >
+              <FaPinterest />
+            </a>
+          </div>
+
+          <p className="text-sm text-white/90">
+            Follow us for daily plant inspiration 🌱
+          </p>
+        </div>
+      </div>
+
+      <div className="border-t border-white/30 text-center py-4 text-sm bg-black/10">
+        © {new Date().getFullYear()} GreenNest — All rights reserved.
+      </div>
+    </footer>
   );
 };
 
